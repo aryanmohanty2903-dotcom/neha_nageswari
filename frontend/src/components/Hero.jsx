@@ -115,15 +115,15 @@ const Hero = () => {
               >
                 <img src={heroImages.secondary} alt="Neha editorial" className="w-full h-full object-cover" />
               </div>
-              {/* Accent label */}
-              <div className="absolute left-0 top-0 w-[38%] h-[28%] flex flex-col justify-between" style={{ transform: `translateY(${wordY}px)` }}>
+              {/* Accent label
+              <div className="absolute left-0 top-[32%] w-[38%] h-[28%] flex flex-col justify-between" style={{ transform: `translateY(${wordY}px)` }}>
                 <div className="font-script text-3xl md:text-4xl leading-tight" style={{ color: "var(--wine)" }}>
                   Best Heroine
                 </div>
                 <div className="font-accent tracking-wider-x text-[10px]" style={{ color: "var(--ink)" }}>
                   — 2024 &amp; 2025 (CONSECUTIVE)
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Floating signature badge */}

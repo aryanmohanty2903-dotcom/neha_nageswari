@@ -11,10 +11,10 @@ const About = () => {
             <div className="lg:sticky lg:top-28">
               <span className="chip mb-6 md:mb-8"><Quote size={12} /> THE ARTIST</span>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
-                A voice <em style={{ color: "var(--wine)" }}>of a new</em> Odisha.
+                An Artist <em style={{ color: "var(--wine)" }}>of a new</em> Odisha.
               </h2>
-              <div className="mt-6 md:mt-8 tile h-[320px] md:h-[420px] frame-gold">
-                <img src={heroImages.tertiary} alt="Neha editorial about" className="w-full h-full object-cover" />
+              <div className="mt-6 md:mt-8 tile frame-gold">
+                <img src={heroImages.tertiary} alt="Neha editorial about" className="w-full h-auto object-contain" />
               </div>
             </div>
           </div>

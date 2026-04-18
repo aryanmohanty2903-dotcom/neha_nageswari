@@ -28,9 +28,9 @@ export const heroStats = [
 ];
 
 export const heroImages = {
-  main: "https://images.unsplash.com/photo-1697516550612-13a58aeb5f76?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBhY3RyZXNzJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc2NTA1MjgyfDA&ixlib=rb-4.1.0&q=85",
-  secondary: "https://images.unsplash.com/photo-1749317776479-152916e4c158?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBhY3RyZXNzJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc2NTA1MjgyfDA&ixlib=rb-4.1.0&q=85",
-  tertiary: "https://images.unsplash.com/photo-1577390613503-7227241f5879?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBhY3RyZXNzJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc2NTA1MjgyfDA&ixlib=rb-4.1.0&q=85"
+  main: "/my-photo-1.jpg",
+  secondary: "/my-photo-2.jpg",
+  tertiary: "/my-photo-3.jpg",
 };
 
 export const currentlyStarring = {
@@ -39,7 +39,7 @@ export const currentlyStarring = {
   network: "Tarang TV",
   year: "2023 — Present",
   description: "A sweeping family saga where Neha commands the screen with a performance of staggering versatility — portraying layered characters within a single arc. Fans and critics alike have called it the most magnetic lead role on Odia television this decade.",
-  image: "https://images.unsplash.com/photo-1749318104903-2348092ef460?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBhY3RyZXNzJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc2NTA1MjgyfDA&ixlib=rb-4.1.0&q=85",
+  image: "/my-photo-4.jpg",
   highlights: [
     "Lead Heroine — Principal cast",
     "Multiple character arcs in a single narrative",
