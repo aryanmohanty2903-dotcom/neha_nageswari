@@ -12,9 +12,19 @@ export default function useReveal() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
     els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    // Safety fallback: after 4s, reveal anything still not shown
+    // (handles cases where IntersectionObserver misses fast-loaded content)
+    const fallback = setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
+    }, 4000);
+
+    return () => {
+      io.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 }

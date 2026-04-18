@@ -24,7 +24,7 @@ export const heroStats = [
   { value: "2024 · 2025", label: "Best Heroine" },
   { value: "6+", label: "Music Videos" },
   { value: "10+", label: "Brand Films" },
-  { value: "7+", label: "Awards & Honours" }
+  { value: "8+", label: "Awards & Honours" }
 ];
 
 export const heroImages = {
@@ -130,34 +130,41 @@ export const brands = [
 export const awards = [
   {
     id: "a1",
+    title: "Raja Sundari — Winner",
+    year: "2023",
+    category: "Season 1 · Reality Show",
+    note: "Crowned champion of Season 1 — the launchpad that introduced Neha to the world of Odia entertainment."
+  },
+  {
+    id: "a2",
     title: "Women of Substance Awards",
     year: "2024",
     category: "Honoree",
     note: "Recognised for artistic influence and cultural impact."
   },
   {
-    id: "a2",
+    id: "a3",
     title: "Best Heroine — Odia Television",
     year: "2024",
     category: "Debut Season",
     note: "Crowned the most celebrated heroine in her breakout year."
   },
   {
-    id: "a3",
+    id: "a4",
     title: "Best Heroine — Odia Television",
     year: "2025",
     category: "Consecutive Win",
     note: "Retained the crown with a second consecutive win."
   },
   {
-    id: "a4",
+    id: "a5",
     title: "Best Jodi — Tarang Parivaar Awards",
     year: "2025",
     category: "On-screen Chemistry",
     note: "Honoured for the most beloved on-screen pairing of the year — a fan-voted celebration of chemistry and charm."
   },
   {
-    id: "a5",
+    id: "a6",
     title: "Fan Favorite — Music Video",
     year: "2024",
     category: "Tate Jebe Bhala Paeili",

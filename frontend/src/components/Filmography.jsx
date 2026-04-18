@@ -3,12 +3,12 @@ import { filmography } from "../mock/mock";
 
 const Filmography = () => {
   return (
-    <section id="works" className="py-24 md:py-32" style={{ background: "var(--ivory)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="flex items-end justify-between mb-14 reveal">
+    <section id="works" className="py-16 md:py-24" style={{ background: "var(--ivory)" }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        <div className="flex items-end justify-between mb-10 md:mb-14 reveal">
           <div>
             <span className="chip mb-5">SELECT WORKS</span>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
               Selected <em style={{ color: "var(--wine)" }}>Filmography</em>
             </h2>
           </div>

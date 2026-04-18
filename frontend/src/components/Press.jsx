@@ -4,11 +4,11 @@ import { Quote } from "lucide-react";
 
 const Press = () => {
   return (
-    <section className="py-24 md:py-32" style={{ background: "var(--ivory-2)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="mb-14 reveal">
+    <section className="py-16 md:py-24" style={{ background: "var(--ivory-2)" }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        <div className="mb-10 md:mb-14 reveal">
           <span className="chip mb-5"><Quote size={12} /> WHAT THEY SAY</span>
-          <h2 className="font-display text-5xl md:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
             Press &amp; <em style={{ color: "var(--wine)" }}>whispers.</em>
           </h2>
         </div>

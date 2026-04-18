@@ -4,12 +4,12 @@ import { Diamond } from "lucide-react";
 
 const Brands = () => {
   return (
-    <section id="brands" className="py-24 md:py-32" style={{ background: "var(--ivory)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="brands" className="py-16 md:py-24" style={{ background: "var(--ivory)" }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="grid grid-cols-12 gap-8 items-end mb-14">
           <div className="col-span-12 md:col-span-7 reveal">
             <span className="chip mb-5"><Diamond size={12} /> BRAND FILMS &amp; ENDORSEMENTS</span>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]" style={{ color: "var(--ink)" }}>
               The face of <em style={{ color: "var(--wine)" }}>fine brands.</em>
             </h2>
           </div>

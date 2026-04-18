@@ -5,8 +5,8 @@ import { Tv, ArrowUpRight, CircleDot } from "lucide-react";
 const CurrentlyStarring = () => {
   const c = currentlyStarring;
   return (
-    <section id="now" className="py-24 md:py-32" style={{ background: "var(--ink)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="now" className="py-16 md:py-24" style={{ background: "var(--ink)" }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex items-center gap-3 mb-10 reveal">
           <CircleDot size={14} style={{ color: "var(--gold)" }} />
           <span className="font-accent tracking-wider-x text-xs" style={{ color: "var(--gold-soft)" }}>
@@ -15,7 +15,7 @@ const CurrentlyStarring = () => {
         </div>
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <div className="col-span-12 lg:col-span-6 order-2 lg:order-1 reveal">
-            <h2 className="font-display text-white text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
               <span>Tori Pai</span>
               <br />
               <span className="italic" style={{ color: "var(--gold)" }}>To Pai</span>

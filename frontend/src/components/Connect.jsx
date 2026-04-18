@@ -37,12 +37,12 @@ const Connect = () => {
   };
 
   return (
-    <section id="connect" className="py-24 md:py-32" style={{ background: "var(--ink)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="connect" className="py-16 md:py-24" style={{ background: "var(--ink)" }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="grid grid-cols-12 gap-10 md:gap-16">
           <div className="col-span-12 lg:col-span-5 reveal">
             <span className="chip chip-dark mb-6">BOOK · COLLABORATE</span>
-            <h2 className="font-display text-white text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
               Let's make <em style={{ color: "var(--gold)" }}>something</em> iconic.
             </h2>
             <p className="mt-6 text-white/70 max-w-md">

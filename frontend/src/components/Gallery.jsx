@@ -6,12 +6,12 @@ const Gallery = () => {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="gallery" className="py-24 md:py-32" style={{ background: "var(--ink)" }}>
-      <div className="max-w-[1500px] mx-auto px-6 md:px-10">
-        <div className="flex items-end justify-between mb-14 reveal">
+    <section id="gallery" className="py-16 md:py-24" style={{ background: "var(--ink)" }}>
+      <div className="max-w-[1500px] mx-auto px-5 md:px-10">
+        <div className="flex items-end justify-between mb-10 md:mb-14 reveal">
           <div>
             <span className="chip chip-dark mb-5">FROM THE LENS</span>
-            <h2 className="font-display text-white text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
               The <em style={{ color: "var(--gold)" }}>Neha</em> lookbook.
             </h2>
           </div>

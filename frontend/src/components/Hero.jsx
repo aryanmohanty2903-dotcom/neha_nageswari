@@ -26,30 +26,30 @@ const Hero = () => {
   const wordY = y * -0.25;
 
   return (
-    <section id="top" className="relative pt-28 md:pt-36 pb-14 overflow-hidden" style={{ background: "var(--ivory)" }} ref={stageRef}>
+    <section id="top" className="relative pt-24 md:pt-32 lg:pt-36 pb-10 md:pb-14 overflow-hidden" style={{ background: "var(--ivory)" }} ref={stageRef}>
       {/* Decorative side label */}
-      <div className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 origin-left -rotate-90">
+      <div className="hidden xl:block absolute left-4 top-1/2 -translate-y-1/2 origin-left -rotate-90">
         <span className="font-accent tracking-wider-x text-[10px]" style={{ color: "var(--muted-ink)" }}>
           SCROLL TO EXPLORE &nbsp;— &nbsp; NEHA NAGESWARI MOHANTY
         </span>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-6 md:gap-10 items-end">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        <div className="grid grid-cols-12 gap-8 lg:gap-10 items-end">
           {/* Left text */}
           <div className="col-span-12 lg:col-span-7 relative">
-            <div className="flex items-center gap-3 mb-8 reveal">
+            <div className="flex items-center gap-3 mb-6 md:mb-8 reveal">
               <span className="divider-dot" />
-              <span className="font-accent tracking-wider-x text-xs" style={{ color: "var(--wine)" }}>
+              <span className="font-accent tracking-wider-x text-[10px] md:text-xs" style={{ color: "var(--wine)" }}>
                 ODIA TV · CINEMA · MUSIC
               </span>
-              <span className="hidden sm:inline-block hr-gold flex-1 w-16" />
+              <span className="hidden sm:inline-block hr-gold flex-1 max-w-[80px]" />
               <span className="hidden sm:inline font-accent tracking-wider-x text-[10px]" style={{ color: "var(--muted-ink)" }}>
                 PORTFOLIO · 25
               </span>
             </div>
 
-            <h1 className="font-display leading-[0.88] text-[14vw] sm:text-[11vw] lg:text-[8.6vw] tracking-tight">
+            <h1 className="font-display leading-[0.88] text-[15vw] sm:text-[12vw] lg:text-[8.4vw] xl:text-[7.6vw] tracking-tight">
               <span className="mask-line reveal" style={{ "--i": 0 }}>
                 <span style={{ color: "var(--ink)" }}>Neha</span>
               </span>
@@ -63,11 +63,11 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-[15px] md:text-base leading-relaxed reveal" style={{ color: "var(--muted-ink)" }}>
+            <p className="mt-6 md:mt-8 max-w-xl text-sm md:text-[15px] lg:text-base leading-relaxed reveal" style={{ color: "var(--muted-ink)" }}>
               {personal.tagline} — currently headlining <strong style={{ color: "var(--ink)" }}>{personal.currentlyStarring}</strong> on {personal.network}. A two-time Best Heroine and the face of modern Odia storytelling.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4 reveal">
+            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4 reveal">
               <Magnetic>
                 <a href="#now" className="btn-primary">
                   Now Playing <ArrowDownRight size={16} />
@@ -81,11 +81,11 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 stagger reveal">
+            <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 stagger reveal">
               {heroStats.map((s, i) => (
-                <div key={i} className="relative pt-5" style={{ "--i": i }}>
+                <div key={i} className="relative pt-4 md:pt-5" style={{ "--i": i }}>
                   <div className="absolute left-0 right-0 top-0 h-px grow-line" style={{ background: "var(--ink)", animationDelay: `${i * 120}ms` }} />
-                  <div className="font-display text-2xl md:text-3xl" style={{ color: "var(--ink)" }}>{s.value}</div>
+                  <div className="font-display text-xl sm:text-2xl md:text-3xl" style={{ color: "var(--ink)" }}>{s.value}</div>
                   <div className="font-accent tracking-luxe text-[10px] mt-1" style={{ color: "var(--muted-ink)" }}>{s.label}</div>
                 </div>
               ))}
@@ -93,8 +93,8 @@ const Hero = () => {
           </div>
 
           {/* Right collage */}
-          <div className="col-span-12 lg:col-span-5 relative">
-            <div className="relative h-[560px] md:h-[680px] reveal">
+          <div className="col-span-12 lg:col-span-5 relative mt-6 lg:mt-0">
+            <div className="relative h-[440px] sm:h-[560px] md:h-[620px] lg:h-[680px] reveal">
               {/* Main portrait */}
               <div className="tile absolute top-0 right-0 w-[78%] h-[78%] shadow-2xl" style={{ transform: `translateY(${mainY}px)` }}>
                 <div className="w-full h-full clip-reveal">

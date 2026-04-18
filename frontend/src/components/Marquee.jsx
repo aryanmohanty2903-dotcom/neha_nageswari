@@ -6,6 +6,7 @@ const Marquee = () => {
     "Tori Pai To Pai",
     "Tarang TV",
     "Best Jodi · Tarang Parivaar 2025",
+    "Raja Sundari · Season 1 Winner",
     "Kamala Rasa",
     "Tate Jebe Bhala Paeili",
     "Women of Substance 2024",
