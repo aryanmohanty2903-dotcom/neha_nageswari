@@ -5,6 +5,7 @@ const Marquee = () => {
   const items = [
     "Tori Pai To Pai",
     "Tarang TV",
+    "Best Jodi · Tarang Parivaar 2025",
     "Kamala Rasa",
     "Tate Jebe Bhala Paeili",
     "Women of Substance 2024",

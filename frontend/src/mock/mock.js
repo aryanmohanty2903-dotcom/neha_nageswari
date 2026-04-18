@@ -151,6 +151,13 @@ export const awards = [
   },
   {
     id: "a4",
+    title: "Best Jodi — Tarang Parivaar Awards",
+    year: "2025",
+    category: "On-screen Chemistry",
+    note: "Honoured for the most beloved on-screen pairing of the year — a fan-voted celebration of chemistry and charm."
+  },
+  {
+    id: "a5",
     title: "Fan Favorite — Music Video",
     year: "2024",
     category: "Tate Jebe Bhala Paeili",
