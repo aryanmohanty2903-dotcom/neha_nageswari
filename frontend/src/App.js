@@ -15,6 +15,8 @@ import Awards from "./components/Awards";
 import Press from "./components/Press";
 import Connect from "./components/Connect";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
+import CustomCursor from "./components/CustomCursor";
 import useReveal from "./hooks/useReveal";
 import { Toaster } from "./components/ui/toaster";
 
@@ -27,9 +29,17 @@ function Home() {
     return () => clearTimeout(t);
   }, []);
 
+  // Lock scroll during preloader
+  useEffect(() => {
+    document.body.style.overflow = loading ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [loading]);
+
   return (
     <div className="grain">
       {loading && <Preloader />}
+      <ScrollProgress />
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />

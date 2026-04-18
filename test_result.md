@@ -101,3 +101,101 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the new backend endpoints for the Neha Nageswari portfolio website. Backend is FastAPI at base URL from frontend's REACT_APP_BACKEND_URL with /api prefix."
+
+backend:
+  - task: "GET /api/ Hello World endpoint"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ Hello World endpoint working correctly - returns {'message': 'Hello World'} with 200 status"
+
+  - task: "POST /api/enquiries contact form submission"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ All POST /api/enquiries tests passed: valid enquiry with all fields, valid enquiry without org (optional), proper 422 validation for missing message, invalid email, and empty name"
+
+  - task: "GET /api/enquiries list all enquiries"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ GET /api/enquiries working correctly - returns list of enquiries sorted by created_at descending with all required fields (id, name, email, org, message, created_at)"
+
+  - task: "POST /api/status endpoint"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ POST /api/status working correctly - creates status check with id, client_name, and timestamp"
+
+  - task: "GET /api/status endpoint"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ GET /api/status working correctly - returns list of status checks"
+
+  - task: "MongoDB persistence for enquiries"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ MongoDB persistence working correctly - enquiries are properly saved and retrieved, verified by creating enquiry and confirming it appears in GET list"
+
+frontend:
+  # No frontend testing requested
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "GET /api/ Hello World endpoint"
+    - "POST /api/enquiries contact form submission"
+    - "GET /api/enquiries list all enquiries"
+    - "MongoDB persistence for enquiries"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "testing"
+      message: "Completed comprehensive backend testing for Neha Nageswari portfolio website. All 6 backend tasks tested successfully: Hello World endpoint, enquiries CRUD operations, status endpoints, and MongoDB persistence. All endpoints properly use /api prefix and work with the configured backend URL. No critical issues found."

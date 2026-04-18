@@ -21,10 +21,10 @@ Her chemistry with Armaan Mohanty in the viral music video "Tate Jebe Bhala Paei
 };
 
 export const heroStats = [
-  { value: "2024 & 2025", label: "Best Heroine" },
-  { value: "2023", label: "Serial Debut" },
+  { value: "2024 · 2025", label: "Best Heroine" },
+  { value: "6+", label: "Music Videos" },
   { value: "10+", label: "Brand Films" },
-  { value: "7+", label: "Awards" }
+  { value: "7+", label: "Awards & Honours" }
 ];
 
 export const heroImages = {
@@ -53,17 +53,67 @@ export const musicVideos = [
     id: "mv1",
     title: "Tate Jebe Bhala Paeili",
     featuring: "with Armaan Mohanty",
+    year: "2024",
+    runtime: "04:12",
+    views: "28M+",
     description: "A tender, viral romance ballad that became an instant sensation across Odisha — celebrated for its honest chemistry and hauntingly cinematic frames.",
     cover: "https://images.unsplash.com/photo-1763145229778-723c84ad3bce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxzYXJlZSUyMGdsYW1vdXJ8ZW58MHx8fHwxNzc2NTA1Mjg2fDA&ixlib=rb-4.1.0&q=85",
-    tag: "Music Video"
+    tag: "Romance"
   },
   {
     id: "mv2",
     title: "Kamala Rasa",
-    featuring: "Dance Hit",
+    featuring: "Dance Single",
+    year: "2024",
+    runtime: "03:48",
+    views: "41M+",
     description: "The dance number that set the state on fire. Her trademark moves in Kamala Rasa spawned a wave of reels, tributes, and on-stage recreations.",
     cover: "https://images.unsplash.com/photo-1463592177119-bab2a00f3ccb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBkYW5jZXxlbnwwfHx8fDE3NzY1MDUzNDh8MA&ixlib=rb-4.1.0&q=85",
     tag: "Dance Hit"
+  },
+  {
+    id: "mv3",
+    title: "Mo Priya Bina",
+    featuring: "Acoustic Single",
+    year: "2024",
+    runtime: "03:26",
+    views: "9.4M",
+    description: "A haunting ballad of longing — filmed through monsoon light and lace curtains, showing Neha at her most vulnerable and luminous.",
+    cover: "https://images.unsplash.com/photo-1764287336801-5ba6b81dceae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxzYXJlZSUyMGdsYW1vdXJ8ZW58MHx8fHwxNzc2NTA1Mjg2fDA&ixlib=rb-4.1.0&q=85",
+    tag: "Ballad"
+  },
+  {
+    id: "mv4",
+    title: "Ranga Tari Saree",
+    featuring: "Festival Release",
+    year: "2025",
+    runtime: "04:02",
+    views: "12M",
+    description: "A vibrant festival single that celebrates Odia tradition — choreography, colour, and a hook that refuses to leave your head.",
+    cover: "https://images.unsplash.com/photo-1756483496981-05b741fdd40a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxzYXJlZSUyMGdsYW1vdXJ8ZW58MHx8fHwxNzc2NTA1Mjg2fDA&ixlib=rb-4.1.0&q=85",
+    tag: "Festival"
+  },
+  {
+    id: "mv5",
+    title: "Dhadakala Hrudaya",
+    featuring: "Duet Video",
+    year: "2025",
+    runtime: "04:38",
+    views: "7.2M",
+    description: "An urban romance shot through the neon of Bhubaneswar's night — intimate, modern, and immaculately styled.",
+    cover: "https://images.unsplash.com/photo-1640172176483-01e47ab934e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHxib2xseXdvb2QlMjBhY3RyZXNzJTIwY2luZW1hdGljfGVufDB8fHx8MTc3NjUwNTI5MXww&ixlib=rb-4.1.0&q=85",
+    tag: "Urban Romance"
+  },
+  {
+    id: "mv6",
+    title: "Suna Kalikia",
+    featuring: "Folk Fusion",
+    year: "2025",
+    runtime: "03:54",
+    views: "5.6M",
+    description: "A folk-fusion anthem dressed in gold and heritage silks — Neha weaving classical posture with a contemporary hook.",
+    cover: "https://images.unsplash.com/photo-1591799701622-38bbfe17b809?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxib2xseXdvb2QlMjBhY3RyZXNzJTIwY2luZW1hdGljfGVufDB8fHx8MTc3NjUwNTI5MXww&ixlib=rb-4.1.0&q=85",
+    tag: "Folk Fusion"
   }
 ];
 

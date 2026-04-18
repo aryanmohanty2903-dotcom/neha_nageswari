@@ -1,33 +1,39 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { personal } from "../mock/mock";
 import { Instagram, Youtube, Mail, Send, ExternalLink } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Connect = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({ title: "Please complete the form", description: "Name, email and message are required." });
       return;
     }
-    // Save locally as mock
+    setLoading(true);
     try {
-      const existing = JSON.parse(localStorage.getItem("neha_enquiries") || "[]");
-      existing.push({ ...form, at: new Date().toISOString() });
-      localStorage.setItem("neha_enquiries", JSON.stringify(existing));
-    } catch {
-      // ignore
+      await axios.post(`${API}/enquiries`, form);
+      setSubmitted(true);
+      toast({ title: "Message sent", description: "Neha's team will get back to you shortly." });
+      setForm({ name: "", email: "", org: "", message: "" });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      const msg = err?.response?.data?.detail || "Something went wrong. Please try again.";
+      toast({ title: "Could not send", description: String(msg) });
+    } finally {
+      setLoading(false);
     }
-    setSubmitted(true);
-    toast({ title: "Message sent", description: "Neha's team will get back to you shortly." });
-    setForm({ name: "", email: "", org: "", message: "" });
-    setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
@@ -97,8 +103,8 @@ const Connect = () => {
               <div className="font-accent tracking-luxe text-[11px]" style={{ color: "rgba(255,255,255,0.5)" }}>
                 * YOUR DETAILS ARE KEPT PRIVATE
               </div>
-              <button type="submit" className="btn-dark-ghost">
-                {submitted ? "Sent ✓" : "Send Enquiry"} <Send size={14} />
+              <button type="submit" className="btn-dark-ghost" disabled={loading}>
+                {loading ? "Sending..." : submitted ? "Sent ✓" : "Send Enquiry"} <Send size={14} />
               </button>
             </div>
           </form>

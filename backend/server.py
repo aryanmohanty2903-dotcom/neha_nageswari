@@ -1,12 +1,12 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -65,6 +65,56 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+
+# -----------------------------
+# Enquiries (Contact form)
+# -----------------------------
+class EnquiryCreate(BaseModel):
+    name: str = Field(..., min_length=1, max_length=120)
+    email: EmailStr
+    org: Optional[str] = Field(default="", max_length=160)
+    message: str = Field(..., min_length=1, max_length=2000)
+
+
+class Enquiry(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: EmailStr
+    org: Optional[str] = ""
+    message: str
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+@api_router.post("/enquiries", response_model=Enquiry)
+async def create_enquiry(payload: EnquiryCreate):
+    try:
+        obj = Enquiry(
+            name=payload.name.strip(),
+            email=payload.email,
+            org=(payload.org or "").strip(),
+            message=payload.message.strip(),
+        )
+        doc = obj.model_dump()
+        doc['created_at'] = doc['created_at'].isoformat()
+        await db.enquiries.insert_one(doc)
+        return obj
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logging.getLogger(__name__).exception("Failed to create enquiry: %s", exc)
+        raise HTTPException(status_code=500, detail="Could not save enquiry")
+
+
+@api_router.get("/enquiries", response_model=List[Enquiry])
+async def list_enquiries():
+    docs = await db.enquiries.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    for d in docs:
+        if isinstance(d.get('created_at'), str):
+            d['created_at'] = datetime.fromisoformat(d['created_at'])
+    return docs
 
 # Include the router in the main app
 app.include_router(api_router)

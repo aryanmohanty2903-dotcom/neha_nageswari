@@ -257,6 +257,169 @@ html, body {
 /* cursor friendly links */
 a { color: inherit; text-decoration: none; }
 
+/* ============================================
+   PREMIUM ANIMATION LAYER
+   ============================================ */
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--wine));
+  z-index: 1000;
+  transition: width 120ms ease-out;
+  box-shadow: 0 0 14px rgba(212,175,122,0.55);
+}
+
+/* Custom cursor */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: #F5F0E8;
+  transition: transform 120ms ease-out, width 220ms ease, height 220ms ease;
+}
+.cursor-ring {
+  width: 34px; height: 34px;
+  border: 1px solid rgba(245,240,232,0.55);
+  transition: transform 400ms cubic-bezier(.2,.7,.2,1), width 300ms ease, height 300ms ease, border-color 300ms ease;
+}
+.cursor-hover .cursor-dot { width: 2px; height: 2px; }
+.cursor-hover .cursor-ring { width: 58px; height: 58px; border-color: var(--gold); }
+
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Text mask reveal */
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+.mask-line > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 1100ms cubic-bezier(.2,.7,.2,1);
+}
+.reveal.in .mask-line > span { transform: translateY(0); }
+
+/* Clip-path image reveal */
+.clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1400ms cubic-bezier(.77,0,.175,1);
+}
+.reveal.in .clip-reveal {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Stagger helpers */
+.stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+/* Parallax float */
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float { animation: floaty 6s ease-in-out infinite; }
+
+/* Magnetic button wrapper (controlled by JS) */
+.magnetic {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 350ms cubic-bezier(.2,.7,.2,1);
+}
+
+/* Count-up bar */
+@keyframes grow-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.grow-line {
+  transform-origin: left;
+  animation: grow-line 1400ms cubic-bezier(.77,0,.175,1) both;
+}
+
+/* Section heading shimmer on reveal */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--ink) 40%, var(--wine) 50%, var(--ink) 60%, var(--ink) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Vinyl spin for music */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 22s linear infinite; }
+
+/* Card 3D tilt prep */
+.tilt { transform-style: preserve-3d; perspective: 1000px; }
+
+/* Marquee vertical for music */
+@keyframes marquee-y {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.animate-marquee-y { animation: marquee-y 22s linear infinite; }
+
+/* Gold underline animated */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: -4px;
+  height: 1px;
+  background: var(--gold);
+  transition: right 500ms cubic-bezier(.2,.7,.2,1);
+}
+.link-underline:hover::after { right: 0; }
+
+/* Music card hover */
+.music-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.music-card img {
+  transition: transform 1600ms cubic-bezier(.2,.7,.2,1), filter 600ms ease;
+  will-change: transform;
+}
+.music-card:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.2) contrast(1.05);
+}
+.music-card .ring {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(212,175,122,0);
+  transition: border-color 700ms ease, inset 600ms ease;
+  pointer-events: none;
+}
+.music-card:hover .ring {
+  border-color: rgba(212,175,122,0.65);
+  inset: 8px;
+}
+
+/* disable native cursor on magnetic buttons only optional */
+
 @layer base {
   :root {
     --background: 40 33% 94%;
